@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config-client
+  profiles:
+    active: development
+  config:
+    import: "optional:configserver:http://localhost:8877"
+  cloud:
+    config:
+      username: root
+      password: root
+    bus:
+      enable: true
+      refresh:
+        enable: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: Test123456
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
+
+
